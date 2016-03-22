@@ -1,0 +1,15 @@
+django==1.8
+requests
+django-widget-tweaks
+djangorestframework
+markdown
+django-filter
+unirest
+python-twitter
+dj-database-url==0.3.0
+dj-static==0.0.6
+gunicorn==19.1.1
+psycopg2==2.5.1
+static==0.4
+whitenoise==2.0.6
+python-instagram

@@ -1,0 +1,151 @@
+.btn-add-filter,
+.btn-add-filter:focus{
+    width: 200px;
+    height: 50px;
+    border-color: #393c3d;
+    background: #fff;
+    color: #393c3d;
+    line-height: 45px;
+    font-size: 18px;
+    padding: 2px 6px !important;
+    transition-duration: 0.3s;
+    margin-bottom:25px;
+}
+
+.btn-add-filter:hover {
+    background-color: #393c3d;
+    border-color: #393c3d;
+    color: #FFF;
+}
+
+.btn-add-filter .btn-filter-icon {
+	padding-right: 20px;
+	margin-right: 16px;
+	border-right: 1px solid #393c3d;
+}
+
+.btn-add-filter:hover .btn-filter-icon {
+    border-color: #FFF
+}
+
+.product-wrapper {
+    display: block;
+    min-height: 85px;
+    background: inherit;
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+	padding: 15px;
+    margin-bottom: 15px;
+	margin-top: 15px
+}
+
+.product-wrapper .product-title {
+	text-transform: uppercase;
+	font-size:13px;
+    padding-bottom: 15px;
+}
+
+.product-wrapper .product-hashtags {
+    font-style: italic;
+    font-weight: 200;
+    padding-bottom: 15px;
+    color: #8C8C8C;
+}
+
+.product-wrapper .product-sentiments {
+    border-top: 1px solid #E4E4E4;
+    padding-top: 15px;
+}
+
+.product-wrapper .product-sentiments .product-sentiment-text {
+    font-weight: 600;
+    color: #8C8C8C;
+}
+
+.product-wrapper .product-sentiments .product-sentiment-icon {
+    color: #E68C00;
+}
+
+.competitor-products .dashboardWrapper,
+.company-products .dashboardWrapper {
+    min-height: 440px;
+}
+
+.initial-product-placeholder {
+    font-size: 35px;
+    color: rgba(140, 140, 140, 0.34);
+    position: relative;
+    top: 125px;
+}
+
+.product-category-title {
+    font-size: 30px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.56);
+
+}
+
+.initial-chart-placeholder {
+    font-size: 45px;
+    color: rgba(140, 140, 140, 0.34);
+    position: relative;
+    top: 100px;
+    margin-bottom: 200px;
+}
+
+.chart-title {
+    font-size: 45px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.56);
+    padding: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.56);
+
+}
+
+.nav .open>a {
+    background-color: inherit !important;
+}
+
+.input-group-addon {
+    background: rgba(57, 60, 61, 0.84);
+    color: #eaeaea;
+}
+
+.sort-container {
+    float:left !important;
+}
+
+
+.btn.btn-datefilter {
+    border-radius: 0;
+    background: white;
+    color: rgba(57, 60, 61, 0.84);
+    font-weight: 600;
+    border-color: rgba(57, 60, 61, 0.84);
+
+}
+
+.btn.btn-datefilter:first-child {
+    border-top-left-radius: 5px ;
+    border-bottom-left-radius: 5px ;
+}
+
+.btn.btn-datefilter:last-child {
+    border-top-right-radius: 5px ;
+    border-bottom-right-radius: 5px ;
+}
+
+.btn-datefilter:hover,
+.btn-datefilter:active,
+.btn-datefilter.active {
+    background: rgba(57, 60, 61, 0.84);
+    color: #eaeaea !important;
+    outline: none !important;
+    border-color: rgba(57, 60, 61, 0.84);
+    transition-duration: 0.3s;
+}
+
+.vs {
+    font-size: 50px;
+    padding: 2.3em 0;
+}

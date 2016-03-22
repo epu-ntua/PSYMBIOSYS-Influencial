@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>InfluenCial</title>
+
+        <!-- meta -->
+        <meta charset="utf-8">
+        <meta name="description" content="Tweeter Influencers Application">
+        <meta name="author" content="Aggelos Arvanitakis, Michael Petychakis">
+        <meta name="keyword" content="Psymbiosis, Twitter, Big Data, Page Rank, Influencers">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        {% load staticfiles %}
+
+	    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+        <link rel="shortcut icon" type="image/icon" href="{% static 'img/favicon.ico' %}"/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style-new.css' %}">
+
+        {% block css %}
+
+
+        {% endblock %}
+
+</head>
+
+<body>
+
+    <noscript>
+        <div class="alert alert-block span10">
+            <h4 class="alert-heading">Warning!</h4>
+            <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+        </div>
+    </noscript>
+
+    <div id="home-page">
+        <!-- site-navigation start -->
+        <nav id="mainNavigation" class="navbar navbar-dafault main-navigation" role="navigation">
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <!-- navbar logo -->
+                    <div class="navbar-brand">
+                        <span class="sr-only">InfluenCial</span>
+                        <a href="{% url 'Influencers Page' %}">
+                            <span class="center-block logo">InfluenCial</span>
+                        </a>
+                    </div>
+                    <!-- navbar logo -->
+
+                </div><!-- /.navbar-header -->
+
+                <!-- nav links -->
+                <div class="collapse navbar-collapse" id="main-nav-collapse">
+                    <ul class="nav navbar-nav navbar-right text-uppercase">
+                        <li>
+                            <a href="{% url 'Influencers Page' %}"><span>influencers</span></a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'Discussions Page' %}"><span>Discussions</span></a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span><i class="fa fa-user margin-right-2"></i>{{ user }}</span></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">configuration</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'Logout Page' %}">logout</a>
+                                </li>
+                            </ul> <!-- end of /.dropdown-menu -->
+                        </li> <!-- end of /.dropdown -->
+                    </ul>
+                </div><!-- nav links -->
+
+            </div><!-- /.container -->
+        </nav>
+        <!-- site-navigation end -->
+
+        {% block content %}
+
+
+        {% endblock %}
+
+        <div class="footer dashboardWrapper col-xs-12 no-margin-bottom" id="footer">
+            <div class="row margin-top-2">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-sm-offset-3 col-md-offset-3 footer-content-wrapper text-center margin-bottom-4 margin-top-4">
+                    <div class="col-xs-4 col-sm-4">
+                        <ul class="footer-containers list-unstyled">
+                            <li>About us<li>
+                            <li><a class="footer-element" href="https://epu.ntua.gr">Who we are</a></li>
+                            <li><a class="footer-element" href="https://www.psymbiosys.eu/">Psymbiosys</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-4">
+                        <ul class="footer-containers list-unstyled">
+                              <li>Contact us<li>
+                              <li><a class="footer-element" href="#">Email</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-4 col-sm-4">
+                        <ul class="footer-containers list-unstyled">
+                            <li>Policies<li>
+                            <li><a class="footer-element" href="#">Terms of use</a></li>
+                            <li><a class="footer-element" href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="text-center margin-top-4">
+                    <h3 class="margin-bottom-4 hidden-xs">Follow InfluenCial on</h3>
+                    <ul class="list-layout list-inline">
+                        <li>
+                            <a href="https://www.facebook.com/Psymbiosys/?fref=ts" class="link-contrast footer-icon-container" target="_blank">
+                                <i class="fa footer-icon fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/psymbiosys" class="link-contrast footer-icon-container" target="_blank">
+                                <i class="fa footer-icon fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/grps/ProductService-sYMBIOtic-SYStemsPSYMBIOSYS-8337422/about?" class="link-contrast footer-icon-container" target="_blank">
+                                <i class="fa footer-icon fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.pinterest.com/airbnb/" class="link-contrast footer-icon-container" itemprop="sameAs" target="_blank">
+                                <i class="fa footer-icon fa-pinterest"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCni7CDRwQCpPk1lFvG_voQQ" class="link-contrast footer-icon-container" target="_blank">
+                                <i class="fa footer-icon fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="row margin-bottom-5">
+                <div class="col-xs-12 text-center rights">
+                    <p>© 2015, InfluenCial</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/modernizr.custom.97074.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/jquery.hoverdir.js' %}"></script>
+
+    {% block js %}
+
+    {% endblock %}
+
+</body>
+
+</html>

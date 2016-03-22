@@ -1,0 +1,153 @@
+.token-input {
+    background: transparent;
+    border:none;
+}
+
+.token-input:hover,
+.token-input:focus,
+.token-input:active {
+    outline: none;
+}
+
+.token {
+    background: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.token:first-of-type {
+    margin-top: 0 !important;
+}
+
+.topic-recommendations {
+    font-style: italic;
+    color: gray;
+    display: none;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+}
+
+.topic-recommendation {
+    font-style: normal;
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 10px;
+    color: #c1bff5;
+}
+
+.graph-container #graph-canvas {
+    width: 100%;
+    height: 550px;
+
+}
+
+.edge-details .edge-colors > div:first-of-type {
+    margin-top: 30px;
+}
+
+.edge-details .edge-colors .topic-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff7d2d;
+}
+
+.edge-details .edge-colors .topic-name {
+    max-width: 160px;
+}
+
+
+.edge-details .edge-colors > div > div {
+    display: inline-block;
+}
+
+.edge-details .edge-colors {
+    max-width: 200px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.edge-details .edge-colors > div{
+    line-height: 2.2em;
+}
+
+.edge-details h4,
+.node-details h4{
+    font-weight: 300;
+}
+
+.node-details .influencer-container {
+    visibility: hidden;
+    /*opacity: 0;*/
+}
+.edge-details h4:after {
+    content: " ";
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    left: 16px;
+    top: 60px;
+    background: lightgray;
+}
+
+.node-details h4:after {
+    content: " ";
+    position: absolute;
+    width: 110px;
+    height: 1px;
+    left: 50%;
+    margin-left: -55px;
+    top: 60px;
+    background: lightgray;
+}
+
+.node-details .influencer-img img{
+    height: 150px;
+    width:150px;
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid lightgray
+}
+
+.node-details .influencer-name {
+    color: #474747;
+    font-size: 16px;
+}
+
+.influence-topic {
+    color: #909090;
+    font-size: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.influence-topic > span {
+    display: inline-block !important;
+}
+
+
+.influence-topic:not(:first-child)::after {
+    content: " ";
+    width:110px;
+    background: #dbdbdb;
+    height:1px;
+    position: absolute;
+    left: 50%;
+    top: 3%;
+    margin-left: -55px;
+}
+
+.initial-graph-placeholder {
+    font-size: 45px;
+    color: rgba(140, 140, 140, 0.34);
+    position: relative;
+    top: 50px;
+    margin-bottom: 200px;
+}
+
+#container {
+    display: none
+}

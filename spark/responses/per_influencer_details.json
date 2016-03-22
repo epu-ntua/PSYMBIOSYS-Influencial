@@ -1,0 +1,17 @@
+[{
+		"name": "Aggelos Arvanitakis",
+		"top_topics": ["Gaming", "IoT",  "Life"], // Top 3 topics based on their avereage_score
+        "topics_averages": [
+          {
+            "name": "Health & Fitness",
+            "average_score": 2.45
+            // Not the same as pagerank_score
+          }],
+                "topics_values": [{
+                    "name": "Health & Fitness",
+                    "start": "%d %m %Y", // The start of the week. The score is calculated for [start, start+7] days
+                    "score": 1.57
+                }]
+        }
+
+]

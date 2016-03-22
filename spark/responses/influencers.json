@@ -1,0 +1,10 @@
+[ // List needs to be sorted based on pagerank_score
+	{
+		"name": "Aggelos Arvanitakis",
+		"twitter_name": "agg.arvanitakis",
+		"twitter_image": "http://www.twitter.com/rw8aAFf9Arw88fFkwA",
+		"pagerank_score": 1.23,
+		"top_topics": ["Gaming", "IoT",  "Life"],
+		"normalized_score": 3.5 // Normalized up to 5 stars with increments of 0.5
+	}
+]

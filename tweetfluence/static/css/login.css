@@ -1,0 +1,168 @@
+/* For Icons on Inputs */
+html, body {
+	height: 100%;
+}
+
+.left-inner-addon {
+    position: relative;
+    margin-bottom: 1em;
+	margin-top: 1em;
+}
+.left-inner-addon input {
+    padding-left: 40px;
+}
+.left-inner-addon .glyphicon {
+    color: #eeeadb;
+    position: absolute;
+    padding: 14px 12px;
+    pointer-events: none;
+}
+
+/*********************************/
+
+.login-margin {
+    margin-top: 20px;
+}
+
+/* For Background and Reveal */
+
+.page-background {
+    background-color: #645862;
+    background: url("../img/login-background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    cursor: default;
+	height: 100%;
+	z-index: 0
+}
+
+.page-background .reveal-box {
+	opacity: 0;
+    -moz-animation: reveal-title 1s 1s ease-in-out;
+    -webkit-animation: reveal-title 1s 1s ease-in-out;
+    -ms-animation: reveal-title 1s 1s ease-in-out;
+    animation: reveal-title 1s 1s ease-in-out;
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.login-form-control {
+	font-size: 17px;
+	color: #ECEAEA;
+	height: 46px;
+	width: 100%;
+	display: block;
+	background-color: inherit;
+    background-image: none;
+    border-bottom: 1px solid #ccc;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-radius: 0;
+}
+
+h1, h2, h3 {
+	font-weight: 300;
+}
+
+.login-form-control:focus {
+	transition-duration:0.2s;
+	border-color: #9ea4a7;
+    outline: 0;
+	-webkit-box-shadow: 0 3px 4px -3px #e8e8e8;
+	box-shadow: 0 3px 4px -3px #efefef;
+}
+@-moz-keyframes reveal-title {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes reveal-title {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes reveal-title {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes reveal-title {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/********************************/
+
+/* For Login Box */
+.login-box {
+	margin-top: 12vh;
+	margin-bottom: 8vh;
+	border-radius: 5px;
+	padding: 3em;
+	background: rgba(25, 22, 22, 0.53);
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-8 */
+	color: white;
+
+}
+
+.login-box .icons i {
+	text-align: right;
+	opacity: .2;
+	filter: alpha(opacity=20);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+	margin: 0px 5px;
+}
+
+.login-box .icons i:hover {
+	opacity: .8;
+	filter: alpha(opacity=80);
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+}
+
+
+.login-box h3 {
+	margin-left: 30px;
+	margin-right: 30px;
+	font-family: 'Open Sans', sans-serif;;
+	font-weight: 200;
+	font-size: 18px;
+	text-align: center;
+}
+
+.login-box h3 a {
+	color: white;
+}
+
+.login-box p {
+	margin: 10px 30px;
+	font-weight: 200;
+	color: white;
+}
+
+.login-box form {
+	padding-top: 30px
+}

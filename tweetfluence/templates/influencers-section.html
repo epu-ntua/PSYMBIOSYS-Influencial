@@ -1,0 +1,56 @@
+{% load staticfiles %}
+{% load custom_filters %}
+
+{% for influencer in top_influencers %}
+
+    <div class="col-md-3 col-sm-4 col-xs-8 col-sm-offset-0 col-xs-offset-2 influencer-container mix" style="display: inline-block;" data-bound>
+        <div class="portfolio-item influencer" data-influencer-id="{{ influencer.id }}">
+            <div class="item-image toggle-analytics">
+                <a href="#">
+                    <img src="{{ influencer.twitter_image }}" class="img-responsive center-block" alt="influencer picture">
+                    <div>
+                        <span><i class="fa fa-search-plus"></i></span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="item-description">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <span class="item-name toggle-analytics margin-top-1">
+                            {{ influencer.name }}
+                        </span>
+                    </div>
+                    <div class="col-xs-12 text-center">
+                        <a class="twitter-link" href="http://twitter.com/{{ influencer.twitter_name }}" target="_blank">
+                            &bull;&nbsp;<i class="margin-right-1 social-network fa fa-{{ influencer.social_network|lower }}"></i>{{ influencer.twitter_name }}&nbsp;&bull;
+                        </a>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="like">
+                            {% for i in influencer.normalized_score|trunc_int|get_range %}
+                            <i class="fa fa-star"></i>
+                            {% endfor %}
+
+                            {% if influencer.normalized_score|is_float %}
+                            <i class="fa fa-star-half-full"></i>
+                            {% endif %}
+
+                            {% for i in influencer.normalized_score|ceil_int|subtract_from:5|get_range %}
+                            <i class="fa fa-star-o"></i>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="influence-topics col-xs-12 margin-top-2 text-center">
+                        {% for topic in influencer.top_topics %}
+                        <div class="influence-topic col-xs-12"><span>{{ topic }}</span></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>  <!-- end of /.item-description -->
+        </div> <!-- end of /.portfolio-item -->
+    </div>
+    {% endfor %}
+    <!-- end of iteration over influencers -->

@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% load widget_tweaks %}
+
+{% block css %}
+    <link href="{% static 'css/style-old.css' %}" rel="stylesheet">
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="page-container page-background">
+    <div class="container">
+        <div class="login-box col-md-offset-4 col-md-4 {% if not error %}reveal-box{% endif %}">
+
+            <div class="row">
+                <h1 class="col-xs-12 text-center">InfluenCial</h1>
+            </div>
+            <form class="form-horizontal" action="{% url 'Login Page' %}" method="post" name="LoginForm" id="LoginForm">
+                {% csrf_token %}
+                <fieldset>
+
+                    <div class="left-inner-addon">
+                        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        {{ login_form.username|add_class:"login-form-control" }}
+                    </div>
+
+                    {% for error in login_form.username.errors %}
+                        <div class="errorlist text-center">{{ error }}</div>
+                    {% endfor %}
+
+                    <div class="left-inner-addon">
+                        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                        {{ login_form.password|add_class:"login-form-control" }}
+                    </div>
+
+                    {% for error in login_form.password.errors %}
+                        <div class="errorlist text-center">{{ error }}</div>
+                    {% endfor %}
+
+                    {% for error in login_form.non_field_errors %}
+                            <div class="alert-danger-InfluenCial text-center">{{ error }}</div>
+                    {% endfor %}
+
+                    <div class="text-center login-margin">
+                        <button type="submit" class="btn btn-InfluenCial">Login</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

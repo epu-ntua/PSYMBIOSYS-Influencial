@@ -1,0 +1,130 @@
+
+
+@media (max-width: 991px) {
+    .login-box,
+    .accountOptions-box {
+        margin: 0;
+    }
+
+    .social-login {
+	    margin: 0;
+    }
+
+    .login-margin {
+        margin-top: 2px;
+        margin-bottom: 5px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .vs {
+        padding: 0.5em 0 1em 1.3em !important;
+    }
+
+    #sidebar-left{
+        padding-right:0;
+    }
+
+    .quick-button.metro.activity-flag {
+        width: 100%
+    }
+    .grid-options {
+        padding: 11px 122px;
+    }
+
+    #content-rest .row {
+        padding: 0 15px;
+    }
+
+    .timeslot-title span:nth-child(2) {
+        direction: ltr;
+    }
+
+    .glyphicon.glyphicon-arrow-right.show-activity-glyphicon{
+        display:none;
+    }
+
+    .circleStat-right-text {
+        height: 85px;
+    }
+
+    .analytics-checkbox {
+        margin-bottom: 25px
+    }
+}
+
+@media (min-width: 767px) {
+    .collapse{
+        display:block;
+    }
+
+    #content {
+        padding-top: 5px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #content-rest .activity-flag {
+        width: 14.2%
+    }
+}
+
+@media (max-width: 1200px) {
+    #content-rest .activity-flag:not(:nth-child(3)) {
+        margin-right: 4.8% !important;
+    }
+
+    #content-rest .row .activity-flag:nth-child(3),
+    #content-rest .row .activity-flag:nth-child(6) {
+        margin-right: 0 !important;
+    }
+
+}
+
+@media (max-width: 531px) {
+    .col-xxs-12 {
+        width: 100% !important;
+        margin-left: -10% !important;
+        text-align: center
+    }
+
+    .glyphicon-star {
+        margin-left: 5% !important;
+    }
+
+    .circleStatsContainer {
+        width: 100% !important;
+    }
+
+    .bs-height-config {
+        height: 220px !important;
+    }
+
+}
+
+@media (min-width: 531px) {
+    .bs-height-config {
+        height: 460px !important;
+    }
+}
+
+@media(max-width: 661px) {
+    .product-container {
+        width: 100% !important;
+    }
+
+     .navbar-inner a:hover,
+     .navbar-inner a{
+        border: 1px solid transparent !important;
+     }
+}
+
+@media(min-width: 992px) {
+    .sort-container {
+        margin-left: 36.3% !important;
+
+    }
+}
+

@@ -1,0 +1,371 @@
+{% extends 'base-authenticated.html' %}
+{% load staticfiles %}
+{% load widget_tweaks %}
+{% load custom_filters %}
+
+<!-- stylesheets -->
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/style-new.css' %}">
+    <link rel="stylesheet" href="{% static 'css/influencers-index.css' %}">
+{% endblock %}
+
+<!-- Page Content -->
+{% block content %}
+    <!-- header start -->
+    <header id="header" class="header-wrapper home-parallax home-fade">
+        <div class="header-overlay"></div>
+        <div class="header-wrapper-inner">
+            <div class="container">
+
+                <div class="welcome-speech">
+                    <h1>Welcome to InfluenCial</h1>
+                    <p>Find out who movitates fashion</p>
+                    <a href="#main-content" id='get-started' class="btn">Get Started</a>
+                </div><!-- /.intro -->
+
+            </div><!-- /.container -->
+
+        </div><!-- /.header-wrapper-inner -->
+    </header>
+    <!-- /#header -->
+
+    <div class="main-content" id="main-content">
+
+        <!--  begin intro section -->
+
+        <section class="intro bg-light-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img src="{% static 'img/coffee-cup-mug-apple-min.jpg' %}" class="img-responsive center-block" alt="intro">
+                    </div>
+
+                    <div class="col-md-7">
+                        <div class="intro-description">
+                            <h2>InfluenCial</h2>
+                            <p>
+                                Our app focuses on identifying the core influencers of the major Industries. Focusing on fashion, it is able to analyze tweets from all over the world and through its groundbreaking algorithms track the people who are responsible for major fashion changes
+                            </p>
+
+                            <ul class="points">
+                                <li>
+                                    <span>
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    Big Data analysis
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    Pagerank Algorithms
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    Spark & Python powered apps
+                                </li>
+                                <li>
+                                    <span>
+                                        <i class="fa fa-check"></i>
+                                    </span>
+                                    Research from N.T.U.A and E.U.
+                                </li>
+                            </ul> <!-- end of /.points -->
+
+                            <a href="#footer" id="learn-more" class="btn btn-slategray">Learn more</a> <!-- /learn more button -->
+                        </div> <!-- end of /.intro-description -->
+                    </div>
+                </div>
+            </div> <!-- end of /.container -->
+        </section>
+        <!--  end of intro section -->
+
+        <!--  begin portfolio section  -->
+        <section class="bg-light-gray">
+            <div class="container">
+
+                <div class="headline text-center">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h2 class="section-title">Core Industry Influencers</h2>
+                        </div>
+                    </div>
+                </div> <!-- /.headline -->
+                <div class="row">
+                    <h3 class="text-center margin-bottom-5" style="font-weight:300">Filter by Topics</h3>
+                    <div class="checkbox-tweetfluence checkbox-topic check-all-container margin-bottom-5" data-check="topic">
+                        <div class="col-xs-4 checkbox-icon">
+                            <input type="checkbox" value="None" checked class="col-xs-4 topic-filter" id="check-all"/>
+                            <label for="check-all"></label>
+                        </div>
+                        <div class="col-xs-8 checkbox-text">Check All</div>
+                    </div>
+                </div>
+                <div class="row margin-bottom-3">
+                    {% for topic_filter in topics %}
+                    <div class="checkbox-tweetfluence checkbox-topic col-md-3 col-sm-4 col-xs-6">
+                        <div class="col-xs-4 checkbox-icon">
+                            <input type="checkbox" value="None" checked class="topic-filter" id="{{ topic_filter|replace_spaces_with_dashes }}"/>
+                            <label for="{{ topic_filter|replace_spaces_with_dashes }}"></label>
+                        </div>
+                        <div class="col-xs-8 checkbox-text">{{ topic_filter }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="row margin-top-3">
+                    <h3 class=" text-center col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center margin-bottom-5" style="font-weight: 300">Filter by Social Networks</h3>
+                </div>
+                <div class="checkbox-tweetfluence checkbox-network check-all-container margin-bottom-5" data-check="network">
+                    <div class="col-xs-4 checkbox-icon">
+                        <input type="checkbox" value="None" checked class="col-xs-4 topic-filter" id="check-all"/>
+                        <label for="check-all"></label>
+                    </div>
+                    <div class="col-xs-8 checkbox-text">Check All</div>
+                </div>
+                <div class="row margin-bottom-3">
+                    <div class="checkbox-tweetfluence checkbox-network col-md-offset-3 col-sm-offset-2 col-xs-offset-0 col-md-3 col-sm-4 col-xs-6">
+                        <div class="col-xs-4 checkbox-icon">
+                            <input type="checkbox" value="None" checked class="network-filter" id="twitter"/>
+                            <label for="twitter"></label>
+                        </div>
+                        <div class="col-xs-8 checkbox-text">twitter</div>
+                    </div>
+                    <div class="checkbox-tweetfluence checkbox-network col-md-3 col-sm-4 col-xs-6">
+                        <div class="col-xs-4 checkbox-icon">
+                            <input type="checkbox" value="None" checked class="network-filter" id="instagram"/>
+                            <label for="instagram"></label>
+                        </div>
+                        <div class="col-xs-8 checkbox-text">instagram</div>
+                    </div>
+                </div>
+
+
+                <div class="portfolio-item-list">
+                    <div class="row" id="influencer-list">
+
+                        <!-- start of iteration over influencers -->
+                        {% include 'influencers-section.html' %}
+
+                        <!-- Analytics -->
+                        <div class="col-xs-12 influencer-analytics">
+                            <div class="top-topics col-sm-4 text-center">
+                                <h3>Top 3 Topics Influenced</h3>
+                                <br/>
+                                <p class="top-topic">Health</p>
+                                <p class="top-topic">Fitness</p>
+                                <p class="top-topic">Internet of Things</p>
+                            </div>
+                            <div class="charts col-sm-8">
+                                <div class="row text-center margin-top-3">
+                                    <div class="col-xs-12">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-chart-select active" value="Month">Timeline</button>
+                                            <button type="button" class="btn btn-chart-select" value="Week">Averages</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="averages-chart col-xs-12"></div>
+                                    <div class="timeline-chart col-xs-12"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end of Analytics -->
+                    </div>
+                    <!-- end of influencer containers -->
+                    <div class="row margin-top-3 margin-bottom-3 text-center">
+                        <a href="" id="load-more" class="btn btn-slategray">Load more</a>
+                    </div>
+                </div>
+                <!-- end of portfolio-item-list -->
+            </div>
+            <!-- end of section container -->
+        </section>
+        <!--   end of portfolio section  -->
+
+
+        <!-- begin twitter-feed section -->
+        <section class="twit-feed">
+            <div class="twit-feed-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <div id="twit" class="owl-carousel owl theme">
+
+                                <div class="item text-center">
+                                    <div class="twit-content">
+                                        <div class="twit-icon">
+                                            <i class="fa fa-twitter"></i>
+                                        </div>
+                                        <h3 class="text-capitalize"> RT these guys @InfluenCial!</h3>
+                                        <p>
+                                            @aggelos.arvanitakis <br/>
+                                            5 hours ago via Twitter
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="item text-center">
+                                    <div class="twit-content">
+                                        <div class="twit-icon">
+                                            <i class="fa fa-twitter"></i>
+                                        </div>
+                                        <h3 class="text-capitalize">Nice job @InfluenCial!</h3>
+                                        <p>
+                                            @mpetyx <br/>
+                                            5 days ago via Twitter
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="item text-center">
+                                    <div class="twit-content">
+                                        <div class="twit-icon">
+                                            <i class="fa fa-twitter"></i>
+                                        </div>
+                                        <h3 class="text-capitalize">@InfluenCial: As an enterpreneur, i approve this app</h3>
+                                        <p>
+                                            @iosif.alvertis <br/>
+                                            16 days ago via Twitter
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> <!--   end of /.twit-feed section  -->
+
+        <!--  begin testimonial section  -->
+
+        <section class="bg-light-gray" id="testimonials">
+            <div class="container">
+
+                <div class="headline text-center">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <h2 class="section-title">testimonials</h2>
+                            <p class="section-sub-title">
+                                absolutely stunning big data analysis
+                            </p> <!-- /.section-sub-title -->
+                        </div>
+                    </div>
+                </div> <!-- /.headline -->
+
+                <div id="client-speech" class="owl-carousel owl-theme">
+
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="client-box">
+                                    <div class="about-client">
+                                        <img src="{% static 'img/teti.jpg' %}" alt="client1">
+                                        <p class="client-intro">Teti L.</p>
+                                    </div> <!-- end of /.about-client -->
+                                    <div class="main-speech">
+                                        <p>
+                                            One of the best new apps of 2016. It's so simple and yet so effective. Being inside the fashion industry for so long i immediately see many uses.
+                                        </p>
+                                    </div> <!-- end of /.main-speech  -->
+                                </div> <!-- end of /.client-box -->
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="client-box">
+                                    <div class="about-client">
+                                        <img src="{% static 'img/michalis.jpg' %}" alt="client2">
+                                        <p class="client-intro">Michael P.</p>
+                                    </div> <!-- end of /.about-client -->
+                                    <div class="main-speech">
+                                        <p>
+                                            This is a significant milestone on the industry of Fashion and it's only the beginning! I believe it would prove a potential must-have for every reseller
+                                        </p>
+                                    </div> <!-- end of /.main-speech  -->
+                                </div> <!-- end of /.client-box -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="client-box">
+                                    <div class="about-client">
+                                        <img src="{% static 'img/evmorfia.jpg' %}" alt="client5">
+                                        <p class="client-intro">Evmorfia B.</p>
+                                    </div> <!-- end of /.about-client -->
+                                    <div class="main-speech">
+                                        <p>
+                                            Absolutely stunning work. Can't wait to use in on my stores to increase my revenues. This app is a win.
+                                        </p>
+                                    </div> <!-- end of /.main-speech  -->
+                                </div> <!-- end of /.client-box -->
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="client-box">
+                                    <div class="about-client">
+                                        <img src="{% static 'img/aggelos.jpg' %}" alt="client6">
+                                        <p class="client-intro">Aggelos A.</p>
+                                    </div> <!-- end of /.about-client -->
+                                    <div class="main-speech">
+                                        <p>
+                                            It is a long established fact that a customer will be influenced by the important figues. The point of this app is to show them.
+                                        </p>
+                                    </div> <!-- end of /.main-speech  -->
+                                </div> <!-- end of /.client-box -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="client-box">
+                                    <div class="about-client">
+                                        <img src="{% static 'img/dummy-img.jpg' %}" alt="client5">
+                                        <p class="client-intro">Iosif A.</p>
+                                    </div> <!-- end of /.about-client -->
+                                    <div class="main-speech">
+                                        <p>
+                                            I am completely and utterly drunk. Yet i still see the potential worth of this application. Great job guys!
+                                        </p>
+                                    </div> <!-- end of /.main-speech  -->
+                                </div> <!-- end of /.client-box -->
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="client-box">
+                                    <div class="about-client">
+                                        <img src="{% static 'img/aggelos.jpg' %}" alt="client6">
+                                        <p class="client-intro">Aggelos A.</p>
+                                    </div> <!-- end of /.about-client -->
+                                    <div class="main-speech">
+                                        <p>
+                                            It is a long established fact that a customer will be influenced by the important figues. The point of this app is to show them.
+                                        </p>
+                                    </div> <!-- end of /.main-speech  -->
+                                </div> <!-- end of /.client-box -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- end of /#client-speech  /.owl-carousel -->
+
+            </div> <!-- end of .container -->
+        </section>
+        <!--  end of testimonial  section -->
+    </div> <!-- end of /.main-content -->
+{% endblock %}
+        <!--  Necessary scripts  -->
+{% block js %}
+        <script src="{% static 'js/d3.min.js' %}"></script>
+        <script src="{% static 'js/dimple.v2.1.2.min.js' %}"></script>
+        <script src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+        <script src="{% static 'js/influencers-new.js' %}"></script>
+{% endblock %}
+
